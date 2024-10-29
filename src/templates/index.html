@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="photo">
+        <img src="{% static 'img/IMG_20230301_070951.jpg' %}">
+    </div>
+    <div class="header1">
+        <h3>Ellyazar Swastiko</h3>
+    </div>
+    <div class="header">
+        <p>Instagram: <a href="https://www.instagram.com/zyy__ell/" target="_blank">@zyy__ell</a></p>
+        <p>Email: ellyazarswastiko@gmail.com | Telepon: 085811425003</p>
+        <p>Alamat: Jl. Karasak Lama, Kota Bandung, Provinsi Jawa Barat</p>
+    </div>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="{% if request.path == '/Pendidikan/' %}active{% endif %}">
+                <a href="{% url 'Pendidikan' %}">Pendidikan</a>
+            </li>
+            <li class="{% if request.path == '/Pengalaman/' %}active{% endif %}">
+                <a href="{% url 'Pengalaman' %}">Pengalaman</a>
+            </li>
+            <li class="{% if request.path == '/Keahlian/' %}active{% endif %}">
+                <a href="{% url 'Keahlian' %}">Keahlian</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+{% block body %}
+{% endblock %}
+</div>
+
+</body>
+</html>
